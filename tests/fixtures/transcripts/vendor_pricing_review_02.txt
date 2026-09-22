@@ -1,0 +1,17 @@
+[00:00] Anna (Consultant): So we went through the three vendor quotes. Vendor A came in at $2.4M for the full rollout, Vendor B at $2.1M but with a 6-month longer timeline, and Vendor C didn't actually quote the full scope, they only priced phase one.
+
+[00:40] Tom (Client, Procurement Lead): Right, we chased Vendor C twice this week but haven't heard back on the full number.
+
+[00:50] Anna: Given the timeline pressure from the board, I'd lean toward Vendor A even at the higher price, but that's ultimately your call.
+
+[01:05] Tom: Agreed, let's go with Vendor A. I'll get the contract routed to legal this week.
+
+[01:15] Anna: Can you loop me in once legal has comments, in case anything affects the scope we assumed?
+
+[01:20] Tom: Will do.
+
+[01:30] Anna: Separately, we should also just discuss general vendor management going forward, might be worth a broader conversation at some point.
+
+[01:45] Tom: Sure, no urgency on that though.
+
+[02:00] Anna: Understood. So to close the loop: Vendor A selected at $2.4M, contract to legal this week, and I'll draft the transition plan for review next Tuesday.

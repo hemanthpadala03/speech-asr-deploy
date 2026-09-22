@@ -1,0 +1,28 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.env
+*.log
+
+# model caches / large local artifacts
+.cache/
+models/
+*.wav
+*.mp3
+*.flac
+!tests/fixtures/.gitkeep
+
+# terraform
+infra/terraform/.terraform/
+infra/terraform/*.tfstate
+infra/terraform/*.tfstate.backup
+infra/terraform/.terraform.lock.hcl
+
+# eval outputs
+eval_runs/

@@ -1,0 +1,4 @@
+Summarize this meeting transcript.
+
+Transcript:
+{{ transcript }}

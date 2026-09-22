@@ -1,0 +1,93 @@
+{
+  "name": "Case Team Meeting Pipeline",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "meeting-recording",
+        "options": {},
+        "httpMethod": "POST"
+      },
+      "name": "Webhook: New Recording",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "url": "={{$env.ASRSERVE_BASE_URL}}/transcribe",
+        "method": "POST",
+        "sendBinaryData": true,
+        "binaryPropertyName": "data",
+        "options": {}
+      },
+      "name": "Transcribe Audio",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "url": "={{$env.ASRSERVE_BASE_URL}}/agent/summarize",
+        "method": "POST",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            { "name": "transcript", "value": "={{$json.text}}" }
+          ]
+        }
+      },
+      "name": "Summarize Call",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [680, 220]
+    },
+    {
+      "parameters": {
+        "url": "={{$env.ASRSERVE_BASE_URL}}/agent/action-items",
+        "method": "POST",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            { "name": "transcript", "value": "={{$node[\"Transcribe Audio\"].json[\"text\"]}}" }
+          ]
+        }
+      },
+      "name": "Extract Action Items",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [680, 380]
+    },
+    {
+      "parameters": {
+        "channel": "={{$env.SLACK_CASE_TEAM_CHANNEL}}",
+        "text": "=*Call summary*\n{{$node[\"Summarize Call\"].json[\"summary\"]}}\n\n*Action items:* {{$node[\"Extract Action Items\"].json[\"action_items\"].length}} extracted"
+      },
+      "name": "Post to Case Team Slack",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.2,
+      "position": [900, 300]
+    }
+  ],
+  "connections": {
+    "Webhook: New Recording": {
+      "main": [[{ "node": "Transcribe Audio", "type": "main", "index": 0 }]]
+    },
+    "Transcribe Audio": {
+      "main": [
+        [
+          { "node": "Summarize Call", "type": "main", "index": 0 },
+          { "node": "Extract Action Items", "type": "main", "index": 0 }
+        ]
+      ]
+    },
+    "Summarize Call": {
+      "main": [[{ "node": "Post to Case Team Slack", "type": "main", "index": 0 }]]
+    },
+    "Extract Action Items": {
+      "main": [[{ "node": "Post to Case Team Slack", "type": "main", "index": 0 }]]
+    }
+  },
+  "meta": {
+    "instanceId": "asrserve-portfolio-demo"
+  }
+}

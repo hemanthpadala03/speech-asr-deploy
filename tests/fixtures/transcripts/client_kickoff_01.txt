@@ -1,0 +1,21 @@
+[00:00] Sarah (Client, VP Ops): Thanks everyone for jumping on. So the main thing we need from this engagement is a clear read on why our fulfillment costs went up 18% year over year, and a plan to get at least half of that back by Q3.
+
+[00:35] Mike (Consultant): Understood. Before we go further, can you confirm the 18% figure includes the new regional warehouse that opened in March, or is that on top of it?
+
+[00:48] Sarah: Good catch, that includes the new warehouse. Strip that out and it's closer to 11%.
+
+[01:10] Mike: Okay, that changes our baseline. We'll need last twelve months of warehouse-level cost data by SKU category. Can your team get that to us by Friday?
+
+[01:22] Sarah: I'll have James pull that. James, can you own that and get it to Mike by end of day Friday?
+
+[01:30] James (Client, Analyst): Yep, I can do that.
+
+[01:35] Mike: Great. On our side, we'll have a first-cut hypothesis map ready for review by next Wednesday's steering committee.
+
+[02:00] Sarah: One more thing -- we talked internally and we want to make sure whatever recommendations come out of this don't require headcount cuts in the warehouse team, that's a hard constraint from the CEO.
+
+[02:15] Mike: Noted, we'll design around that constraint explicitly rather than treating it as a nice-to-have.
+
+[02:30] Sarah: Also just as a general comment, it's been a pretty hectic quarter for everyone honestly, lot of turnover on our side.
+
+[02:45] Mike: Understandable, we'll keep meetings tight to respect everyone's time.
